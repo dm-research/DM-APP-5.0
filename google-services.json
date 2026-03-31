@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "722751389363",
+    "project_id": "dm-research",
+    "storage_bucket": "dm-research.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722751389363:android:a99aa03270900cf14afac6",
+        "android_client_info": {
+          "package_name": "com.harsh.dmresearch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD08aJYKAmkNf9re2w_RQ45m_SQQDnIOWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

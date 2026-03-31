@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "DM Research",
+    "slug": "dm-research-app",
+    "version": "4.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "in.dmresearch.app",
+      "versionCode": 4,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "POST_NOTIFICATIONS"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B1E3D"
+      }
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B1E3D"
+    },
+    "icon": "./assets/icon.png",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#B48900",
+          "sounds": []
+        }
+      ]
+    ],
+    "owner": "akansha.ra",
+    "extra": {
+      "eas": {
+        "projectId": "b062286e-d163-4834-8744-7ee2d235d5d1"
+      }
+    }
+  }
+}

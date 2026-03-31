@@ -1,0 +1,41 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "calls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isHidden", "order": "ASCENDING"  },
+        { "fieldPath": "postedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "calls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isHidden", "order": "ASCENDING"  },
+        { "fieldPath": "segment",  "order": "ASCENDING"  },
+        { "fieldPath": "postedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "calls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isHidden",  "order": "ASCENDING"  },
+        { "fieldPath": "timeframe", "order": "ASCENDING"  },
+        { "fieldPath": "postedAt",  "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "calls",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isHidden",  "order": "ASCENDING"  },
+        { "fieldPath": "segment",   "order": "ASCENDING"  },
+        { "fieldPath": "timeframe", "order": "ASCENDING"  },
+        { "fieldPath": "postedAt",  "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

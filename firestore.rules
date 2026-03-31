@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── USERS ─────────────────────────────────────────────────────────────
+    // Users can only read and write their own document.
+    // Admin can read/write any user document to manage subscriptions.
+    match /users/{uid} {
+      allow read: if request.auth != null &&
+        (request.auth.uid == uid || request.auth.token.email == 'admin@dmresearch.in');
+      allow write: if request.auth != null &&
+        (request.auth.uid == uid || request.auth.token.email == 'admin@dmresearch.in');
+    }
+
+    // ── CALLS ─────────────────────────────────────────────────────────────
+    // Any authenticated user can read calls.
+    // Only admin can create, update, or delete calls.
+    match /calls/{callId} {
+      allow read: if request.auth != null;
+      allow create, update, delete: if request.auth != null &&
+        request.auth.token.email == 'admin@dmresearch.in';
+    }
+
+    // ── ARTICLES ──────────────────────────────────────────────────────────
+    // Any authenticated user can read articles.
+    // Only admin can create, update, or delete articles.
+    match /articles/{articleId} {
+      allow read: if request.auth != null;
+      allow create, update, delete: if request.auth != null &&
+        request.auth.token.email == 'admin@dmresearch.in';
+    }
+
+    // ── CONFIG ────────────────────────────────────────────────────────────
+    // Any authenticated user can read config (trial days etc).
+    // Only admin can write config.
+    match /config/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null &&
+        request.auth.token.email == 'admin@dmresearch.in';
+    }
+
+    // ── NOTIFICATIONS ─────────────────────────────────────────────────────
+    // Users can read/write only their own push token document.
+    // Admin can read all tokens (for sending notifications).
+    match /pushTokens/{uid} {
+      allow read: if request.auth != null &&
+        (request.auth.uid == uid || request.auth.token.email == 'admin@dmresearch.in');
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
